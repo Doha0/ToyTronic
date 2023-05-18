@@ -12,4 +12,10 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'warn',
   },
+
+  "eslintConfig": {
+    "rules": {
+      "no-var": 0
+    }
+  }
 }
