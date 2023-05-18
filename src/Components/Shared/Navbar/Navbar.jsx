@@ -4,6 +4,7 @@ import logo from '../../../assets/logo.png'
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../../Providers/AuthProvider';
 
+
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
@@ -19,7 +20,7 @@ const Navbar = () => {
         <li><Link to="/allToys">All Toys</Link></li>
         <li><Link to="/blog">Blogs</Link></li>
         {
-            user?.email ? <>
+            user ? <>
                 < li ><Link to="/addToy">Add A Toy</Link></li>
                 <li><Link to="/myToys">My Toys</Link></li>
             </> : <> </>

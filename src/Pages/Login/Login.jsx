@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
@@ -9,6 +9,10 @@ const Login = () => {
 
     const { logIn, googleSignIn } = useContext(AuthContext);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const pathFrom = location.state?.from?.pathname || '/';
 
 
     const handelLogin = (event) => {
@@ -22,7 +26,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 form.reset();
-                // console.log(loggedUser);
+                navigate(pathFrom, { replace: true });
             })
             .catch(error => {
                 const errorMessage = error.message;
@@ -34,7 +38,7 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-
+                navigate(pathFrom, { replace: true });
             })
             .catch(error => {
                 const errorMessage = error.message;

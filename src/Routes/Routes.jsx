@@ -8,6 +8,8 @@ import Blog from "../Pages/Blog/Blog";
 import AllToys from "../Pages/ToyPages/AllToys/AllToys";
 import MyToys from "../Pages/ToyPages/MyToys/MyToys";
 import AddToy from "../Pages/ToyPages/AddToy/AddToy";
+import Spinner from "../Components/Shared/Spinner/Spinner";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -38,11 +40,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "/myToys",
-                element: <MyToys></MyToys>
+                element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
             },
             {
                 path: "/addToy",
-                element: <AddToy></AddToy>
+                element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
+            },
+            {
+                path: "/spinner",
+                element: <Spinner></Spinner>
             },
         ]
     },
