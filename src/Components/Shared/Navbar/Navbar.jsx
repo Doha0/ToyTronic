@@ -1,14 +1,29 @@
 // import React from 'react';
+import { useContext } from 'react';
 import logo from '../../../assets/logo.png'
-
 import { Link } from "react-router-dom";
+import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+
+    const handelLogOut = () => {
+        logOut()
+            .then((result) => { })
+            .catch(error => { console.log(error) })
+    }
+
     const navbarItems = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/">All Toys</Link></li>
-        <li><Link to="/">Blogs</Link></li>
+        <li><Link to="/allToys">All Toys</Link></li>
+        <li><Link to="/blog">Blogs</Link></li>
+        {
+            user?.email ? <>
+                < li ><Link to="/addToy">Add A Toy</Link></li>
+                <li><Link to="/myToys">My Toys</Link></li>
+            </> : <> </>
+        }
     </>
 
     return (
@@ -36,7 +51,12 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to="/login" className="btn btn-info text-white">Login Now</Link>
+                {user ? <div className='flex gap-2'>
+                    <img className="w-10 mask mask-squircle" title={user?.displayName} src={user?.photoURL} />
+                    <button
+                        onClick={handelLogOut} className="btn btn-secondary text-white">Log Out</button></div>
+                    : <div><Link to='/login' className="btn btn-info text-white" >Login Now</Link></div>
+                }
             </div>
         </nav>
     );
