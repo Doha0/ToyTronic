@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
 
@@ -8,10 +9,9 @@ const UpdateToy = () => {
     const toys = useLoaderData();
 
     const {
+        _id,
         picture_url,
         name,
-        seller_name,
-        seller_email,
         sub_category,
         price,
         rating,
@@ -34,7 +34,7 @@ const UpdateToy = () => {
         const formData = { picture_url, name, seller_name, seller_email, sub_category, price, rating, available_quantity, description };
 
 
-        fetch(`https://toy-tronic-server.vercel.app/toys/${id}`, {
+        fetch(`https://toy-tronic-server.vercel.app/toys/${_id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -43,15 +43,14 @@ const UpdateToy = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Toy added Successfully',
+                        text: 'Toy Updated Successfully',
                         icon: 'success',
                         confirmButtonText: 'Done'
                     })
                 }
-                form.reset();
             })
 
 
@@ -62,7 +61,7 @@ const UpdateToy = () => {
             <h2 className='header-title my-14 '>Update Toy</h2>
 
             <div className='card w-full lg:w-7/12  bg-sky-200'>
-                <form onSubmit={() => handelUpdateToy(_id)} className='card-body'  >
+                <form onSubmit={handelUpdateToy} className='card-body'  >
 
                     <div className="form-control">
                         <label className="label">
