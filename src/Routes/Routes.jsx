@@ -51,7 +51,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addToy",
-                element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
+                element: <PrivateRoute><AddToy></AddToy></PrivateRoute>,
             },
             {
                 path: "/spinner",

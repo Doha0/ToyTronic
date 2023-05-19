@@ -18,12 +18,14 @@ const SingleToy = () => {
 
     } = singleToy;
 
+    console.log(picture_url);
+
     return (
         <div className='grid grid-cols-1 justify-items-center'>
             <h2 className='header-title my-10'> {name} </h2>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
-                    <img src="https://i.ibb.co/J7Swmhp/Ha746c6461f6f48bdb4b459b54668b34cr-jpg-960x960.webp" alt="Toy" className="rounded-xl" />
+                    <img src={picture_url} alt="Toy" className="rounded-xl" />
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title"> {name} </h2>
