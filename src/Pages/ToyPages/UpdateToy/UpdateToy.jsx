@@ -1,12 +1,25 @@
 import React, { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
-import Swal from 'sweetalert2';
 
+const UpdateToy = () => {
 
-const AddToy = () => {
     const { user } = useContext(AuthContext);
+    const toys = useLoaderData();
 
-    const handelAddToy = (event) => {
+    const {
+        picture_url,
+        name,
+        seller_name,
+        seller_email,
+        sub_category,
+        price,
+        rating,
+        available_quantity,
+        description
+    } = toys;
+
+    const handelUpdateToy = (event) => {
         event.preventDefault();
         const form = event.target;
         const picture_url = form.photo.value;
@@ -21,8 +34,8 @@ const AddToy = () => {
         const formData = { picture_url, name, seller_name, seller_email, sub_category, price, rating, available_quantity, description };
 
 
-        fetch('https://toy-tronic-server.vercel.app/toys', {
-            method: "POST",
+        fetch(`https://toy-tronic-server.vercel.app/toys/${id}`, {
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -44,26 +57,25 @@ const AddToy = () => {
 
     }
 
-
     return (
         <div className='grid grid-cols-1 justify-items-center'>
-            <h2 className='header-title my-14 '>Add A Toy</h2>
+            <h2 className='header-title my-14 '>Update Toy</h2>
 
             <div className='card w-full lg:w-7/12  bg-sky-200'>
-                <form onSubmit={handelAddToy} className='card-body'  >
+                <form onSubmit={() => handelUpdateToy(_id)} className='card-body'  >
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Picture URL</span>
                         </label>
-                        <input type="text" name="photo" className="input input-bordered" required />
+                        <input type="text" name="photo" defaultValue={picture_url} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Toy Name</span>
                         </label>
-                        <input type="text" name="toyName" className="input input-bordered" required />
+                        <input type="text" name="toyName" defaultValue={name} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
@@ -84,35 +96,35 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Sub-Category</span>
                         </label>
-                        <input type="text" name="category" className="input input-bordered" required />
+                        <input type="text" name="category" defaultValue={sub_category} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
-                        <input type="text" name="price" className="input input-bordered" required />
+                        <input type="text" name="price" defaultValue={price} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
-                        <input type="text" name="rating" className="input input-bordered" required />
+                        <input type="text" name="rating" defaultValue={rating} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Available Quantity</span>
                         </label>
-                        <input type="text" name="quantity" className="input input-bordered" required />
+                        <input type="text" name="quantity" defaultValue={available_quantity} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Description</span>
                         </label>
-                        <input type="text" name="description" className="input input-bordered" required />
+                        <input type="text" name="description" defaultValue={description} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control mt-6">
@@ -126,4 +138,4 @@ const AddToy = () => {
     );
 };
 
-export default AddToy;
+export default UpdateToy;

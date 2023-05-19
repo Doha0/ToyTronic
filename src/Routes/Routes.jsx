@@ -11,6 +11,7 @@ import AddToy from "../Pages/ToyPages/AddToy/AddToy";
 import Spinner from "../Components/Shared/Spinner/Spinner";
 import PrivateRoute from "./PrivateRoute";
 import SingleToy from "../Pages/ToyPages/SingleToy/SingleToy";
+import UpdateToy from "../Pages/ToyPages/UpdateToy/UpdateToy";
 
 
 const router = createBrowserRouter([
@@ -48,7 +49,11 @@ const router = createBrowserRouter([
             {
                 path: "/myToys",
                 element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
-                // loader: ({ params }) => fetch(`https://toy-tronic-server.vercel.app/myToy/${params.id}`)
+            },
+            {
+                path: "/update/:id",
+                element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://toy-tronic-server.vercel.app/toys/${params.id}`)
             },
             {
                 path: "/addToy",

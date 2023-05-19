@@ -17,7 +17,7 @@ const MyToysTable = ({ toy, idx }) => {
             <td>{sub_category}</td>
             <td>${price}</td>
             <td>Quantity: {available_quantity}</td>
-            <td ><Link to={`/singleToy/${_id}`} className='btn btn-info text-white'>Update</Link></td>
+            <td ><Link to={`/update/${_id}`} className='btn btn-info text-white'>Update</Link></td>
             <td>Delete</td>
         </tr>
     );

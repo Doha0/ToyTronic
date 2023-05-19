@@ -22,7 +22,7 @@ const MyToys = () => {
     return (
         <div>
 
-            <h2 className='header-title mt-14'>All Toys</h2>
+            <h2 className='header-title mt-14'>My Toys</h2>
             <div className="overflow-x-auto my-10">
                 <table className="table table-compact w-full">
                     <thead>
