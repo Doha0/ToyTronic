@@ -6,12 +6,6 @@ const AllToys = () => {
 
     const allToys = useLoaderData();
 
-    const {
-        name,
-        seller_name
-
-    } = allToys;
-
     return (
         <div>
             <h2 className='header-title mt-14'>All Toys</h2>
@@ -30,9 +24,10 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            allToys.map(allToy => <AllToysTable
+                            allToys.map((allToy, idx) => <AllToysTable
                                 key={allToy._id}
                                 allToy={allToy}
+                                idx={idx}
                             ></AllToysTable>)
                         }
                     </tbody>
