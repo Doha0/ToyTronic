@@ -14,18 +14,18 @@ const AllToys = () => {
 
     return (
         <div>
-            <h2>All Toys Here: {allToys.length} </h2>
-            <div className="overflow-x-auto w-full">
+            <h2 className='header-title mt-10'>All Toys</h2>
+            <div className="overflow-x-auto my-10">
                 <table className="table table-compact w-full">
                     <thead>
                         <tr>
-
+                            <th>Serial NO.</th>
                             <th>Seller Name</th>
                             <th>Toy Name</th>
                             <th>Sub Category</th>
                             <th>Price</th>
                             <th>Available Quantity</th>
-                            <th>Details</th>
+                            <th>View Details</th>
                         </tr>
                     </thead>
                     <tbody>
