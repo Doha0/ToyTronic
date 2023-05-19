@@ -1,8 +1,9 @@
-// import React from 'react';
+import React from 'react';
 import { useContext } from 'react';
 import logo from '../../../assets/logo.png'
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../../Providers/AuthProvider';
+
 
 
 const Navbar = () => {
@@ -18,13 +19,13 @@ const Navbar = () => {
     const navbarItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/allToys">All Toys</Link></li>
-        <li><Link to="/blog">Blogs</Link></li>
         {
             user ? <>
                 < li ><Link to="/addToy">Add A Toy</Link></li>
                 <li><Link to="/myToys">My Toys</Link></li>
             </> : <> </>
         }
+        <li><Link to="/blog">Blogs</Link></li>
     </>
 
     return (

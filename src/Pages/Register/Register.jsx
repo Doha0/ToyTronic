@@ -2,13 +2,14 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link } from "react-router-dom";
+import { FcGoogle } from 'react-icons/fc';
 
 const Register = () => {
 
 
     const [error, setError] = useState('');
 
-    const { createUser, userInfo } = useContext(AuthContext);
+    const { createUser, userInfo, googleSignIn } = useContext(AuthContext);
 
     const handelSignUp = (event) => {
         event.preventDefault();
@@ -34,18 +35,27 @@ const Register = () => {
                     }).catch((error) => {
 
                     });
-                console.log(createdUser);
+
                 form.reset();
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                // console.log(errorMessage);
                 setError(errorMessage);
             });
 
-
-
     }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                setError(errorMessage);
+            })
+    }
+
 
 
     return (
@@ -57,46 +67,55 @@ const Register = () => {
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-sky-200">
 
-                        <form onSubmit={handelSignUp} className="card-body">
+                        <div className="card-body">
+                            <form onSubmit={handelSignUp} >
 
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Name</span>
-                                </label>
-                                <input type="text" name='name' className="input input-bordered " required />
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Name</span>
+                                    </label>
+                                    <input type="text" name='name' className="input input-bordered " required />
+                                </div>
+
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Email</span>
+                                    </label>
+                                    <input type="email" name='email' className="input input-bordered" required />
+                                </div>
+
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Password</span>
+                                    </label>
+                                    <input type="password" name='password' className="input input-bordered" required />
+                                </div>
+
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Photo URL</span>
+                                    </label>
+                                    <input type="text" name='photoUrl' className="input input-bordered" required />
+                                </div>
+
+                                <div className="form-control mt-6">
+                                    <button className="btn btn-info text-white">Register</button>
+                                </div>
+                            </form>
+
+
+
+                            <div className="flex flex-col w-full border-opacity-50">
+                                <div className="divider">OR</div>
                             </div>
 
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" name='email' className="input input-bordered" required />
-                            </div>
+                            <button onClick={handleGoogleSignIn} className="btn bg-white hover:btn-info hover:text-white text-black "><FcGoogle size={28}></FcGoogle> <span className='pl-2'>Sign-in with Google</span></button>
 
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="password" name='password' className="input input-bordered" required />
-                            </div>
+                            <p className="label">
+                                <a className="text-red-700">{error} </a>
+                            </p>
+                        </div>
 
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Photo URL</span>
-                                </label>
-                                <input type="text" name='photoUrl' className="input input-bordered" required />
-                            </div>
-
-                            <div className="form-control mt-6">
-                                <button className="btn btn-info text-white">Register</button>
-                            </div>
-                            <label className="label">
-                                <Link to='/login' className="label-text-alt link link-hover">Already have an account? Login</Link>
-                            </label>
-                            <label className="label">
-                                <p className="text-red-700">{error} </p>
-                            </label>
-                        </form>
                     </div>
                 </div>
             </div>
