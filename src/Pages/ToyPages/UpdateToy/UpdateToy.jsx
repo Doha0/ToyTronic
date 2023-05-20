@@ -67,35 +67,35 @@ const UpdateToy = () => {
                         <label className="label">
                             <span className="label-text">Picture URL</span>
                         </label>
-                        <input type="text" name="photo" defaultValue={picture_url} className="input input-bordered" required />
+                        <input type="text" name="photo" readOnly value={picture_url} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Toy Name</span>
                         </label>
-                        <input type="text" name="toyName" defaultValue={name} className="input input-bordered" required />
+                        <input type="text" name="toyName" readOnly Value={name} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Seller Name</span>
                         </label>
-                        <input type="text" name="sellerName" defaultValue={user?.displayName} className="input input-bordered" required />
+                        <input type="text" name="sellerName" readOnly Value={user?.displayName} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Seller Email</span>
                         </label>
-                        <input type="email" name="sellerEmail" defaultValue={user?.email} className="input input-bordered" required />
+                        <input type="email" name="sellerEmail" readOnly Value={user?.email} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Sub-Category</span>
                         </label>
-                        <input type="text" name="category" defaultValue={sub_category} className="input input-bordered" required />
+                        <input type="text" name="category" readOnly Value={sub_category} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
@@ -109,7 +109,7 @@ const UpdateToy = () => {
                         <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
-                        <input type="text" name="rating" defaultValue={rating} className="input input-bordered" required />
+                        <input type="text" name="rating" readOnly Value={rating} className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
@@ -127,7 +127,7 @@ const UpdateToy = () => {
                     </div>
 
                     <div className="form-control mt-6">
-                        <input className="btn btn-info text-white" type="submit" value="Add A Toy" />
+                        <input className="btn btn-info text-white" type="submit" value="Update Toy" />
                     </div>
 
                 </form>

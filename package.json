@@ -19,6 +19,7 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.2",
     "react-spinners-components": "^2.0.4",
+    "react-star-ratings": "^2.3.0",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.7.5"
   },
