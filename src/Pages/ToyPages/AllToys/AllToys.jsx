@@ -29,7 +29,7 @@ const AllToys = () => {
                     onChange={(event) => setSearchValue(event.target.value)}
                     type="text"
                     name="search"
-                    className="input input-bordered input-info h-12 w-2/12"
+                    className="input input-bordered input-info h-12 w-5/12 lg:w-2/12"
                     required
                     placeholder="Search Toys"
                 />

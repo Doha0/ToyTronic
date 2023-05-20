@@ -23,8 +23,8 @@ const SingleToy = () => {
     return (
         <div className='grid grid-cols-1 justify-items-center'>
             <h2 className='header-title my-4'> </h2>
-            <div className="card w-4/12 bg-base-100 shadow-xl rounded-none">
-                <figure className='px-10 pt-10'><img src={picture_url} alt="Toy" /></figure>
+            <div className="card w-96 xl:w-4/12 bg-base-100 shadow-xl rounded-sm">
+                <figure className='px-10 pt-10 '><img className='rounded-sm' src={picture_url} alt="Toy" /></figure>
                 <div className="card-body">
                     <h2 className='header-title my-4'> {name} </h2>
                     <div className="card-actions justify-between justify-items-center card-title">
@@ -41,8 +41,8 @@ const SingleToy = () => {
 
                         <div className="badge badge-secondary">${price}</div>
                     </div>
-                    <h2 className=" "> {seller_name}</h2>
-                    <h2 className="">{seller_email}</h2>
+                    <h2> {seller_name}</h2>
+                    <h2>{seller_email}</h2>
                     <p>Available Items: {available_quantity} pieces</p>
                     <p>{description.substring(0, 300)}...</p>
 

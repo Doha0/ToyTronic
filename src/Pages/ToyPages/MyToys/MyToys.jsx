@@ -8,6 +8,8 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [toys, setToys] = useState([]);
 
+
+
     const url = `https://toy-tronic-server.vercel.app/myToy/${user?.email}`;
 
     useEffect(() => {
@@ -19,6 +21,13 @@ const MyToys = () => {
                 setToys(data)
             })
     }, []);
+
+    const handleFilter = (value) => {
+        fetch(`https://toy-tronic-server.vercel.app/sort?email=${user?.email}&sort=${value}`)
+            .then((res) => res.json())
+            .then((data) => setToys(data));
+    };
+
 
     const handleDelete = (_id) => {
 
@@ -58,6 +67,22 @@ const MyToys = () => {
         <div>
 
             <h2 className='header-title mt-14'>My Toys</h2>
+
+
+            <div>
+                <select
+                    className="select select-primary w-36"
+                    defaultValue="filter"
+                    onChange={(e) => handleFilter(e.target.value)}
+                >
+                    <option value="filter" disabled>
+                        Filter By
+                    </option>
+                    <option value="-1">High Price</option>
+                    <option value="1">Low Price</option>
+                </select>
+            </div>
+
             <div className="overflow-x-auto my-10">
                 <table className="table table-compact w-full">
                     <thead>
