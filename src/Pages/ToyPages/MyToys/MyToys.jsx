@@ -69,17 +69,17 @@ const MyToys = () => {
             <h2 className='header-title mt-14'>My Toys</h2>
 
 
-            <div>
+            <div className='grid justify-end'>
                 <select
-                    className="select select-primary w-36"
+                    className="select select-info w-36"
                     defaultValue="filter"
-                    onChange={(e) => handleFilter(e.target.value)}
+                    onChange={(event) => handleFilter(event.target.value)}
                 >
                     <option value="filter" disabled>
                         Filter By
                     </option>
-                    <option value="-1">High Price</option>
-                    <option value="1">Low Price</option>
+                    <option value="-1">Price: High</option>
+                    <option value="1">Price: Low</option>
                 </select>
             </div>
 

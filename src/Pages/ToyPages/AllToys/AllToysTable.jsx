@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AllToysTable = ({ allToy, idx }) => {
+
+    const { user } = useContext(AuthContext);
 
     const {
         _id,
@@ -10,6 +14,15 @@ const AllToysTable = ({ allToy, idx }) => {
         sub_category,
         price,
         available_quantity } = allToy;
+
+    const handleViewDetails = () => {
+        if (!user) {
+            Swal.fire({
+                icon: 'error',
+                title: 'You have to log in first to view details',
+            })
+        }
+    }
 
 
     return (
@@ -22,7 +35,7 @@ const AllToysTable = ({ allToy, idx }) => {
             <td>{sub_category}</td>
             <td>${price}</td>
             <td>Quantity: {available_quantity}</td>
-            <td ><Link to={`/singleToy/${_id}`} className='btn btn-info text-white'>View Details</Link></td>
+            <td ><Link onClick={handleViewDetails} to={`/singleToy/${_id}`} className='btn btn-info text-white'>View Details</Link></td>
         </tr>
 
     );

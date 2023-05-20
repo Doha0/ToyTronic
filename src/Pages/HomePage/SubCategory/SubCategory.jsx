@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { AuthContext } from '../../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 const SubCategory = () => {
+
+    const { user } = useContext(AuthContext);
 
     const [category, setCategory] = useState([]);
     const [selectedTab, setSelectedTab] = useState('Camera_Drones');
@@ -24,6 +28,16 @@ const SubCategory = () => {
     const handleTabSelect = (id) => {
         setSelectedTab(id);
     };
+
+    const handleViewDetails = () => {
+        if (!user) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You have to log in first to view details'
+            })
+        }
+    }
 
 
     return (
@@ -57,7 +71,8 @@ const SubCategory = () => {
                                             </div>
                                             <div className="badge badge-secondary">${drones.price}</div>
                                         </div>
-                                        <Link to={`/singleToy/${drones._id}`} className='btn btn-info text-white mt-2'>View Details</Link>
+
+                                        <Link onClick={handleViewDetails} to={`/singleToy/${drones._id}`} className='btn btn-info text-white mt-2'>View Details</Link>
 
                                     </div>
                                 </div>
@@ -88,7 +103,8 @@ const SubCategory = () => {
                                             </div>
                                             <div className="badge badge-secondary">${drones.price}</div>
                                         </div>
-                                        <Link to={`/singleToy/${drones._id}`} className='btn btn-info text-white mt-2'>View Details</Link>
+
+                                        <Link onClick={handleViewDetails} to={`/singleToy/${drones._id}`} className='btn btn-info text-white mt-2'>View Details</Link>
 
                                     </div>
                                 </div>
@@ -119,7 +135,7 @@ const SubCategory = () => {
                                             </div>
                                             <div className="badge badge-secondary">${drones.price}</div>
                                         </div>
-                                        <Link to={`/singleToy/${drones._id}`} className='btn btn-info text-white mt-2'>View Details</Link>
+                                        <Link onClick={handleViewDetails} to={`/singleToy/${drones._id}`} className='btn btn-info text-white mt-2'>View Details</Link>
 
                                     </div>
                                 </div>
