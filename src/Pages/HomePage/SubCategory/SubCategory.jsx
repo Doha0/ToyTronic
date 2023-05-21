@@ -15,12 +15,12 @@ const SubCategory = () => {
     const [selectedTab, setSelectedTab] = useState('Camera_Drones');
 
     useEffect(() => {
-        fetch(`https://toy-tronic-server.vercel.app/subcategory/${selectedTab}`)
+        fetch(`https://toy-tronic-server.vercel.app/sub/${selectedTab}`, {
+            method: "GET"
+        })
             .then(res => res.json())
-            .then(data => {
-                // console.log(data);
-                setCategory(data);
-            })
+            .then(data => setCategory(data)
+            )
     }, [selectedTab]);
 
     // console.log(category);
