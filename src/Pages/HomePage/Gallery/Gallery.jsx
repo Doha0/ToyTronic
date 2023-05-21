@@ -15,18 +15,17 @@ const Gallery = () => {
 
     useEffect(() => {
         AOS.init({
-            duration: 1000, // Animation duration in milliseconds
-            offset: 200, // Offset (in pixels) from the original trigger point
-            easing: 'ease-in-out', // Easing function for the animation
-            // Add more options as needed
+            duration: 1000,
+            offset: 120,
+            easing: 'ease-in-out',
         });
     }, []);
 
 
     return (
         <div className='section-margin'>
-            <h2 className='header-title'>Gallery Here</h2>
-            <p className='paragraph-title'>Gallery Paragraph</p>
+            <h2 className='header-title'>Camera Drones</h2>
+            <p className='paragraph-title'>Capture your moments from above</p>
 
             <div className='overflow-x-hidden'>
                 {
