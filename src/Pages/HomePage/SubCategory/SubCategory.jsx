@@ -33,8 +33,7 @@ const SubCategory = () => {
         if (!user) {
             Swal.fire({
                 icon: 'error',
-                title: 'Oops...',
-                text: 'You have to log in first to view details'
+                title: 'You have to log in first to view details',
             })
         }
     }
