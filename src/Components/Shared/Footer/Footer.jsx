@@ -5,7 +5,7 @@ import { SiTwitter } from 'react-icons/si';
 
 const Footer = () => {
     return (
-        <div className="mt-10">
+        <div>
             <footer className="footer p-10 md:pl-36 bg-sky-200 text-black">
                 <div>
                     <span className="text-2xl font-bold text-sky-500">

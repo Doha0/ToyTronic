@@ -2,8 +2,11 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../../Hook/useTitle';
 
 const UpdateToy = () => {
+
+    useTitle('UpdateToy');
 
     const { user } = useContext(AuthContext);
     const toys = useLoaderData();
@@ -57,7 +60,7 @@ const UpdateToy = () => {
     }
 
     return (
-        <div className='grid grid-cols-1 justify-items-center'>
+        <div className='grid grid-cols-1 justify-items-center mb-16'>
             <h2 className='header-title my-14 '>Update Toy</h2>
 
             <div className='card w-full lg:w-7/12  bg-sky-200'>

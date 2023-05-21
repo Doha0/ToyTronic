@@ -12,7 +12,7 @@ const Shop = () => {
     }, [])
 
     return (
-        <div className='section-margin'>
+        <div className="mt-16 lg:mt-32">
             {
                 data.map(shop => <div
                     key={shop._id}

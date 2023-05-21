@@ -3,8 +3,11 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
+import useTitle from "../../Hook/useTitle";
 
 const Register = () => {
+
+    useTitle('Register');
 
 
     const [error, setError] = useState('');

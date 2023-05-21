@@ -2,8 +2,11 @@ import { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import useTitle from '../../Hook/useTitle';
 
 const Login = () => {
+
+    useTitle('Login');
 
     const [error, setError] = useState('');
 

@@ -16,7 +16,7 @@ const Gallery = () => {
     useEffect(() => {
         AOS.init({
             duration: 1000,
-            offset: 120,
+            offset: 300,
             easing: 'ease-in-out',
         });
     }, []);
@@ -28,10 +28,10 @@ const Gallery = () => {
             <p className='paragraph-title'>Capture your moments from above</p>
 
             <div className='overflow-x-hidden'>
-                {
+                {data &&
                     data.map(db => <div
                         key={db._id}
-                        className={`flex justify-evenly ${db.way}`}
+                        className={`flex justify-evenly ${db.way === 'flex-row' ? 'flex-row' : 'flex-row-reverse'}`}
                         data-aos={`${db.animate}`}
                     >
 

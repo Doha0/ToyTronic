@@ -24,8 +24,8 @@ const AllToys = () => {
 
 
     return (
-        <div>
-            <h2 className='header-title mt-14'>All Toys</h2>
+        <div className='my-20'>
+            <h2 className='header-title mt-10'>All Toys</h2>
 
             <form onSubmit={handleSearch} className='flex items-center justify-center my-10'>
                 <input

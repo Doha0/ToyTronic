@@ -20,9 +20,8 @@ const Home = () => {
             <Gallery></Gallery>
             <SubCategory></SubCategory>
 
-
-            <Shop></Shop>
             <Faq></Faq>
+            <Shop></Shop>
 
         </div>
     );

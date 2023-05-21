@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../../Hook/useTitle';
 
 
 const AddToy = () => {
+
+    useTitle('AddAToy');
     const { user } = useContext(AuthContext);
 
     const handelAddToy = (event) => {
@@ -46,7 +49,7 @@ const AddToy = () => {
 
 
     return (
-        <div className='grid grid-cols-1 justify-items-center'>
+        <div className='grid grid-cols-1 justify-items-center mb-16'>
             <h2 className='header-title my-14 '>Add A Toy</h2>
 
             <div className='card w-full lg:w-7/12  bg-sky-200'>
