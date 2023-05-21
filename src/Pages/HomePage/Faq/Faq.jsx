@@ -16,7 +16,7 @@ const Faq = () => {
 
                     <div>
 
-                        <div tabindex="0" className="p-4 md:p-5 collapse collapse-plus bg-sky-100 rounded-box mb-7 ">
+                        <div tabIndex="0" className="p-4 md:p-5 collapse collapse-plus bg-sky-100 rounded-box mb-7 ">
                             <div className="collapse-title font-semibold text-2xl">
                                 How can I place an order on the Toy Tronic website?
                             </div>
@@ -25,7 +25,7 @@ const Faq = () => {
                             </div>
                         </div>
 
-                        <div tabindex="0" className="p-4 md:p-5 collapse collapse-plus bg-sky-100 rounded-box mb-7 ">
+                        <div tabIndex="0" className="p-4 md:p-5 collapse collapse-plus bg-sky-100 rounded-box mb-7 ">
                             <div className="collapse-title font-semibold text-2xl">
                                 What payment methods are accepted on the Toy Tronic store?
                             </div>
@@ -34,7 +34,7 @@ const Faq = () => {
                             </div>
                         </div>
 
-                        <div tabindex="0" className="p-4 md:p-5 collapse collapse-plus bg-sky-100 rounded-box mb-7 ">
+                        <div tabIndex="0" className="p-4 md:p-5 collapse collapse-plus bg-sky-100 rounded-box mb-7 ">
                             <div className="collapse-title font-semibold text-2xl">
                                 What is the return policy for toys purchased from Toy Tronic?
                             </div>
@@ -43,7 +43,7 @@ const Faq = () => {
                             </div>
                         </div>
 
-                        <div tabindex="0" className="p-4 md:p-5 collapse collapse-plus bg-sky-100 rounded-box mb-7 ">
+                        <div tabIndex="0" className="p-4 md:p-5 collapse collapse-plus bg-sky-100 rounded-box mb-7 ">
                             <div className="collapse-title font-semibold text-2xl">
                                 Are the toys on the website safe for children of all ages?
                             </div>
@@ -52,7 +52,7 @@ const Faq = () => {
                             </div>
                         </div>
 
-                        <div tabindex="0" className="p-4 md:p-5 collapse collapse-plus bg-sky-100 rounded-box mb-7 ">
+                        <div tabIndex="0" className="p-4 md:p-5 collapse collapse-plus bg-sky-100 rounded-box mb-7 ">
                             <div className="collapse-title font-semibold text-2xl">
                                 How do I contact customer support?
                             </div>

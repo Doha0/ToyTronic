@@ -23,8 +23,6 @@ const SubCategory = () => {
             )
     }, [selectedTab]);
 
-    // console.log(category);
-
     const handleTabSelect = (id) => {
         setSelectedTab(id);
     };
