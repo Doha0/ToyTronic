@@ -5,8 +5,8 @@ const Banner = () => {
 
         <div>
 
-            <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner})` }}>
-                <div className="hero-overlay bg-opacity-10"></div>
+            <div className="hero p-4 lg:p-32 bg-cover bg-center bg-no-repeat object-cover" style={{ backgroundImage: `url(${banner})` }}>
+
                 <div className="hero-content mx-6 grid grid-cols-1 lg:grid-cols-2">
                     <div className='text-white'>
                         <h1 className="mb-5 text-5xl font-bold">Toy Tronic <br /> Ignite Your Playtime</h1>

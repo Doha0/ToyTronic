@@ -39,6 +39,11 @@ const SubCategory = () => {
 
     return (
         <div>
+
+            <h1 className=" text-center font-semibold text-4xl my-10">Explore Our Toys</h1>
+            <p className="text-center font-medium text-base mb-6 mx-4 lg:mx-40 px-2 lg:px-24">Spark your imagination and embrace innovation at ToyTronic! Discover electrifying electronic toys that ignite endless playtime possibilities. Unleash the excitement, dive into a world of fun, and let ToyTronic make your playtime unforgettable.
+            </p>
+
             <Tabs>
                 <TabList>
                     <Tab onClick={() => handleTabSelect('Camera_Drones')}>Camera Drones</Tab>
