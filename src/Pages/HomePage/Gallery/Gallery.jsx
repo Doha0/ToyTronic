@@ -24,8 +24,8 @@ const Gallery = () => {
 
     return (
         <div className='section-margin'>
-            <h2 className='header-title mt-10 lg:mt-24'>Camera Drones</h2>
-            <p className='paragraph-title mt-10 mb-20'>Capture your moments from above</p>
+            <h2 className='header-title my-10 lg:my-16 '>Camera Drones</h2>
+            <p className='paragraph-title mb-10'>Capture your moments from above</p>
 
             <div className='overflow-x-hidden'>
                 {data &&

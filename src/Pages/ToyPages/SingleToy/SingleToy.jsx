@@ -31,7 +31,7 @@ const SingleToy = () => {
                 <div className="card-body">
                     <h2 className='header-title my-4'> {name} </h2>
                     <div className="card-actions justify-between justify-items-center card-title">
-                        <div className="">
+                        <div>
                             <StarRatings
                                 rating={parseFloat(rating)}
                                 starRatedColor="rgb(18, 213, 234)"
