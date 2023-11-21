@@ -1,5 +1,6 @@
 
 import useTitle from "../../../Hook/useTitle";
+import Products from "../../Products/products";
 import Banner from "../Banner/Banner";
 import Faq from "../Faq/Faq";
 import Gallery from "../Gallery/Gallery";
@@ -17,10 +18,13 @@ const Home = () => {
 
             <Banner></Banner>
 
-            <Gallery></Gallery>
-            <SubCategory></SubCategory>
+            <div className="container mx-auto">
+                <Products />
+                <Gallery></Gallery>
+                <SubCategory></SubCategory>
+                <Faq></Faq>
+            </div>
 
-            <Faq></Faq>
             <Shop></Shop>
 
         </div>
