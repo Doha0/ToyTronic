@@ -1,22 +1,18 @@
-import banner from '../../../assets/banner.jpg'
+
 
 const Banner = () => {
     return (
 
-        <div>
-
-            <div className="hero p-4 lg:p-32 bg-cover bg-center bg-no-repeat object-cover" style={{ backgroundImage: `url(${banner})` }}>
-
-                <div className="hero-content mx-6 grid grid-cols-1 lg:grid-cols-2">
-                    <div className='text-white'>
-                        <h1 className="mb-5 text-5xl font-bold">Toy Tronic <br /> Ignite Your Playtime</h1>
-                        <p className="mb-5 font-medium text-lg">Welcome to ToyTronic, where imagination meets innovation!  Explore a world of electrifying play with our incredible selection   of electronic toys. From interactive robots to cutting-edge gadgets, ToyTronic brings the thrill of technology to your fingertips. Unleash the excitement.</p>
-                        <button className="btn bg-slate-900 text-white">Get Started</button>
-                    </div>
+        <section className="w-full bg-center bg-cover bg-no-repeat h-[50rem]" style={{ backgroundImage: "url('https://i.ibb.co/ZdkqRq1/Drone-Banner.jpg')" }}>
+            <div className="flex items-center justify-center w-full h-full bg-gray-900/30">
+                <div className="text-center">
+                    <h1 className="text-3xl font-bold text-white lg:text-4xl">Toy Tronic <span className="text-sky-400">Ignite</span> Your Playtime</h1>
+                    <p className="my-4 font-medium text-slate-200 text-lg">Welcome to ToyTronic, where imagination meets innovation!  Explore a world of <br /> electrifying  play with our incredible selection of electronic toys. Unleash the excitement.</p>
+                    <button className="w-full px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-sky-600 rounded-md lg:w-auto hover:bg-sky-500 focus:outline-none focus:bg-sky-500">Get Started</button>
                 </div>
             </div>
+        </section>
 
-        </div>
 
     );
 };
