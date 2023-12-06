@@ -3,7 +3,7 @@
 const Banner = () => {
     return (
 
-        <section className="w-full bg-center bg-cover bg-no-repeat h-[50rem]" style={{ backgroundImage: "url('https://i.ibb.co/ZdkqRq1/Drone-Banner.jpg')" }}>
+        <section className="w-full bg-center bg-cover bg-no-repeat h-[56rem]" style={{ backgroundImage: "url('https://i.ibb.co/ZdkqRq1/Drone-Banner.jpg')" }}>
             <div className="flex items-center justify-center w-full h-full bg-gray-900/30">
                 <div className="text-center">
                     <h1 className="text-3xl font-bold text-white lg:text-4xl">Toy Tronic <span className="text-sky-400">Ignite</span> Your Playtime</h1>
